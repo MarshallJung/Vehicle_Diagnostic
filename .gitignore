@@ -1,0 +1,8 @@
+# Ignore the virtual environment
+vehicle_diag/
+
+# Ignore Python cache files
+__pycache__/
+
+# Ignore our secret .env file
+.env

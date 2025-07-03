@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Diagnostic Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Vehicle Diagnostic Assistant</h1>
+
+        <!-- Section 1: Vehicle Identification -->
+        <section class="card">
+            <h2>1. Identify Your Vehicle</h2>
+            <div id="vehicle-info-display" class="vehicle-identified">
+                <p>No vehicle identified yet.</p>
+            </div>
+            
+            <div class="input-group">
+                <input type="text" id="vehicle-text-input" placeholder="e.g., 2021 Ford F-150">
+                <button id="identify-text-btn">Tell me what vehicle you have.</button>
+            </div>
+            <div class="input-group">
+                <label for="vin-file-input">Or upload VIN sticker photo:</label>
+                <input type="file" id="vin-file-input" accept="image/*">
+                <button id="identify-image-btn">Identify from Image</button>
+            </div>
+        </section>
+
+        <!-- Section 2: Describe the Problem -->
+        <section class="card">
+            <h2>2. Describe the Problem</h2>
+            <textarea id="problem-description-input" rows="4" placeholder="Describe the problem here... This text will be used for either option below. e.g., 'What is this red liquid leaking under my car?'"></textarea>
+            
+            <hr>
+        
+            <div class="input-group">
+                <p><strong>Option A:</strong> Get a diagnosis from text description only.</p>
+                <button id="get-diagnosis-text-btn" disabled>Get Diagnosis from Text</button>
+            </div>
+        
+            <div class="input-group">
+                <p><strong>Option B:</strong> Add a photo to your description from above. It might help!</p>
+                <label for="problem-file-input">Upload a photo of the problem:</label>
+                <input type="file" id="problem-file-input" accept="image/*">
+                <button id="get-diagnosis-image-btn" disabled>Get Diagnosis from Image</button>
+            </div>
+        </section>
+
+        <!-- Section 3: Results -->
+        <section class="card">
+            <h2>3. Diagnosis Results</h2>
+            <div id="loader" class="loader hidden"></div>
+            <div id="results-container">
+                <p>Results will appear here...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
